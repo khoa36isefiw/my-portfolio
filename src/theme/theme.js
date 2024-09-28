@@ -1,11 +1,12 @@
 import { createTheme } from "@mui/material";
+import { blue } from "@mui/material/colors";
 export const theme = createTheme({
   palette: {
     bgcolor: "#FBF8CC",
     primaryColor: "#F5EE84",
-
     secondaryColor: "#03045E",
     thirth: "#474306",
+    blue600: blue[600],
   },
   breakpoints: {
     values: {
