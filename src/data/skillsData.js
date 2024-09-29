@@ -52,7 +52,7 @@ export const backEndDevelopments = [
   {
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYrNVwxlBhUzwBd6H4YqdJckckasr4N6PjQw&s",
-    name: "NodeJ",
+    name: "NodeJS",
   },
 
   {
