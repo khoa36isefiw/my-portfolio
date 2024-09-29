@@ -1,11 +1,12 @@
 import LevelUpLogo from "../assets/images/LevelUpLogo.png";
+import GimmeShoes from "../assets/images/shoes.webp";
+
 export const projectsData = [
   {
     projectId: 1,
     projectType: "website",
     projectName: "Gimme Shoes Store",
-    projectImage:
-      "http://localhost:3000/static/media/shoes.b5c0ff494d81481967ce.webp",
+    projectImage: GimmeShoes,
     desc: "Developing an e-commerece website to selling shoes",
     timeStart: "Oct, 2023",
     timeEnd: "Dec, 2023",
