@@ -27,9 +27,10 @@ function About() {
       <Box sx={{ mt: 2 }}>
         <AboutTitle title={"Skills"} />
         <Skills skill={"Languages"} data={languagesData} />
-        <Skills skill={"Database"} data={databaseData} />
+
         <Skills skill={"Front-end Developments"} data={frontEndDevelopments} />
         <Skills skill={"Back-end Developments"} data={backEndDevelopments} />
+        <Skills skill={"Database"} data={databaseData} />
         <Skills
           skill={"Mobile App Developments"}
           data={mobileAppDevelopments}

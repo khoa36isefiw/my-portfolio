@@ -89,7 +89,7 @@ const ProjectList = ({ projectsData, filter }) => {
             my: 4,
           }}
         >
-          <Grid2 item size={{ lg: 6 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
             <Box
               sx={{
                 height: "100%",
@@ -135,6 +135,7 @@ const ProjectList = ({ projectsData, filter }) => {
               <Box
                 sx={{
                   mx: 4,
+                  mt: 2,
                 }}
               >
                 {/* Link to live preview */}
@@ -181,12 +182,11 @@ const ProjectList = ({ projectsData, filter }) => {
               </Box>
             </Box>
           </Grid2>
-          <Grid2 item size={{ lg: 6 }} sx={{ zIndex: 999 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
             <Avatar
               src={data.projectImage}
               alt="Gimme Shoes Project"
               sx={{
-                zIndex: 999,
                 borderRadius: 0,
                 borderTopRightRadius: 16,
                 borderBottomRightRadius: 16,
