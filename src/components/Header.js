@@ -1,25 +1,20 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, Container, IconButton, Tooltip, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import reactImage from "../assets/images/physics.png";
 import VNFlag from "../assets/images/VN-circle.png";
 import UKFlag from "../assets/images/UK.png";
-
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import { blue } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
+
 function Header() {
   const navigate = useNavigate();
   const [enLanguage, setEnLanguage] = useState(true);
   const [scrollY, setSrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   const headers = [
     { title: "Home", exact: true, link: "/" },
     { title: "About", exact: true, link: "/about-me" },
@@ -202,6 +197,48 @@ function Header() {
             </Tooltip>
           </a>
         </Box>
+        {/* Mobile Menu Icon */}
+        <IconButton
+          sx={{ display: { xs: "flex", md: "none" } }} // Only visible on mobile
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+        </IconButton>
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <Box
+            sx={{
+              display: { xs: "block", md: "none" },
+              position: "absolute",
+              top: "60px",
+              width: "100%",
+              backgroundColor: "white",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              zIndex: 9,
+            }}
+          >
+            {headers.map((header, index) => (
+              <Typography
+                key={index}
+                sx={{
+                  padding: "10px",
+                  fontSize: "18px",
+                  borderBottom: "1px solid #eee",
+                  "&:hover": {
+                    cursor: "pointer",
+                    backgroundColor: "#f1f1f1",
+                  },
+                }}
+                onClick={() => {
+                  navigate(header.link);
+                  setMenuOpen(false);
+                }}
+              >
+                {header.title}
+              </Typography>
+            ))}
+          </Box>
+        )}
       </Container>
     </Box>
   );

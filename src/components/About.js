@@ -1,8 +1,7 @@
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
-import TagIcon from "@mui/icons-material/Tag";
-import { theme } from "../theme/theme";
+
 import Skills from "./Skills/Skills";
 import {
   languagesData,
@@ -11,12 +10,23 @@ import {
   backEndDevelopments,
   mobileAppDevelopments,
 } from "../data/skillsData";
+import { mobileScreen } from "../theme/theme";
 
 function About() {
   return (
-    <Box>
+    <Box
+      sx={{
+        [mobileScreen]: {
+          width: "100%",
+        },
+      }}
+    >
       <AboutTitle title={"About me"} />
-      <CustomizeTypography sx={{ fontSize: "18px" }}>
+      <CustomizeTypography
+        sx={{
+          fontSize: "18px",
+        }}
+      >
         I am a student from HCMC University of Technology and Education.
       </CustomizeTypography>
       <CustomizeTypography sx={{ fontSize: "18px" }}>
@@ -48,6 +58,9 @@ const AboutTitle = ({ title }) => {
       sx={{
         display: "flex",
         alignItems: "center",
+        [mobileScreen]: {
+          width: "90%",
+        },
       }}
     >
       <CustomizeTypography
@@ -63,6 +76,9 @@ const AboutTitle = ({ title }) => {
           height: 4,
           width: "180px",
           bgcolor: "yellowgreen",
+          [mobileScreen]: {
+            width: "120px",
+          },
         }}
       />
     </Box>

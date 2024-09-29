@@ -4,7 +4,7 @@ import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import ShareIcon from "@mui/icons-material/Share";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid2 from "@mui/material/Grid2";
-import { theme } from "../theme/theme";
+import { mobileScreen, theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,14 @@ function Projects() {
     setFilter("mobile");
   };
   return (
-    <Container>
+    <Box
+      sx={{
+        px: 2,
+        [mobileScreen]: {
+          px: 0,
+        },
+      }}
+    >
       <CustomizeTypography sx={{ fontSize: "20px" }}>
         The list of projects below has been made by my team and me while we are
         studying at the university.
@@ -59,17 +66,25 @@ function Projects() {
           Mobile App
         </Button>
       </Box>
-      <Box sx={{ px: 8, my: 4 }}>
+      <Box
+        sx={{
+          px: 8,
+          my: 4,
+          [mobileScreen]: {
+            px: 0,
+            my: 0,
+          },
+        }}
+      >
         <ProjectList projectsData={projectsData} filter={filter} />
       </Box>
-    </Container>
+    </Box>
   );
 }
 
 export default Projects;
 
 const ProjectList = ({ projectsData, filter }) => {
-  const navigate = useNavigate();
   // render project list: webiste and mobile application
   const listProject = projectsData.filter(
     (item) => item.projectType === filter
@@ -87,6 +102,10 @@ const ProjectList = ({ projectsData, filter }) => {
             height: 450,
             boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 15px",
             my: 4,
+            [mobileScreen]: {
+              width: "100%",
+              my: 0,
+            },
           }}
         >
           <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
