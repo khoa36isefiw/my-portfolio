@@ -1,4 +1,12 @@
-import { Avatar, Box, Button, Container, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import reactImage from "../assets/images/physics.png";
@@ -7,7 +15,7 @@ import UKFlag from "../assets/images/UK.png";
 
 import { useNavigate } from "react-router-dom";
 import { blue } from "@mui/material/colors";
-
+import GitHubIcon from "@mui/icons-material/GitHub";
 function Header() {
   const navigate = useNavigate();
   const [enLanguage, setEnLanguage] = useState(true);
@@ -42,7 +50,7 @@ function Header() {
         width: "100%",
         position: "sticky",
         top: "10px",
-        zIndex: 1000,
+        zIndex: 10,
         [tabletScreen]: {
           minHeight: "80px",
         },
@@ -119,6 +127,7 @@ function Header() {
               alignItems: "center",
               justifyContent: "center",
               mr: 2,
+              zIndex: 12,
             }}
           >
             <Box
@@ -174,6 +183,24 @@ function Header() {
               />
             </Box>
           )}
+          <a href={"https://github.com/khoa36isefiw"} target="_blank">
+            <Tooltip
+              title={
+                <Typography
+                  sx={{
+                    fontSize: "13px",
+                    mb: 0,
+                  }}
+                >
+                  My Repository
+                </Typography>
+              }
+            >
+              <IconButton sx={{ padding: 0, ml: 2, border: "1px solid #ccc" }}>
+                <GitHubIcon sx={{ fontSize: "40px", color: "black" }} />
+              </IconButton>
+            </Tooltip>
+          </a>
         </Box>
       </Container>
     </Box>
