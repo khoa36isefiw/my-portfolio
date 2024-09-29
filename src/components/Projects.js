@@ -1,7 +1,8 @@
 import { Avatar, Box, Button, Container } from "@mui/material";
 import React, { useState } from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
-import pShoes from "../assets/images/shoes.webp";
+import ShareIcon from "@mui/icons-material/Share";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid2 from "@mui/material/Grid2";
 import { theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
@@ -74,11 +75,6 @@ const ProjectList = ({ projectsData, filter }) => {
     (item) => item.projectType === filter
   );
 
-  const handleNavigateProjectDetail = (projectName) => {
-    navigate(`/my-projects/${projectName}`);
-    console.log("navigate to: ", `/my-projects/${projectName}`);
-  };
-
   console.log("project type is: ", filter, " and it data: ", listProject);
   return (
     <React.Fragment>
@@ -119,31 +115,70 @@ const ProjectList = ({ projectsData, filter }) => {
                 {/* Gimme Stores */}
                 {data.projectName}
               </CustomizeTypography>
+
               <CustomizeTypography
                 sx={{ fontSize: "20px", mb: 1, mx: 4, width: "90%" }}
               >
                 {/* Developing an e-commerece website to selling shoes */}
-                {data.desc}
+                <strong>Description:</strong> {data.desc}
               </CustomizeTypography>
-              <Button
-                variant="outlined"
-                fullWidth={false}
+              <CustomizeTypography
                 sx={{
-                  width: 150,
-                  textTransform: "initial",
-                  fontSize: "16px",
-                  borderRadius: 10,
-                  border: "1px solid #03045E",
-                  color: "#03045E",
+                  fontSize: "18px",
+                  mb: 1,
                   mx: 4,
-                  mt: 1,
-                }}
-                onClick={() => {
-                  handleNavigateProjectDetail(data.projectName);
+                  width: "90%",
                 }}
               >
-                View Project
-              </Button>
+                <strong>Technologies:</strong> {data.technologies.join(", ")}
+              </CustomizeTypography>
+              <Box
+                sx={{
+                  mx: 4,
+                }}
+              >
+                {/* Link to live preview */}
+                {data.linkDeployed && (
+                  <a href={data.linkDeployed} target="_blank">
+                    <Button
+                      startIcon={<ShareIcon />}
+                      sx={{
+                        color: "black",
+                        fontSize: "18px",
+                        textTransform: "initial",
+                        textDecoration: "underline",
+
+                        mr: 4,
+                        "&:hover": {
+                          bgcolor: "transparent",
+                          textDecoration: "underline",
+                        },
+                      }}
+                    >
+                      Live Preview
+                    </Button>
+                  </a>
+                )}
+
+                {/* source code */}
+                <a href={data.linkSourceCode} target="_blank">
+                  <Button
+                    startIcon={<GitHubIcon />}
+                    sx={{
+                      color: "black",
+                      fontSize: "18px",
+                      textTransform: "initial",
+                      textDecoration: "underline",
+                      "&:hover": {
+                        bgcolor: "transparent",
+                        textDecoration: "underline",
+                      },
+                    }}
+                  >
+                    View Code
+                  </Button>
+                </a>
+              </Box>
             </Box>
           </Grid2>
           <Grid2 item size={{ lg: 6 }} sx={{ zIndex: 999 }}>
