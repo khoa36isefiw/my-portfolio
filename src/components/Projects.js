@@ -33,7 +33,15 @@ function Projects() {
         studying at the university.
       </CustomizeTypography>
       {/* filter button */}
-      <Box sx={{ my: 4, px: 8 }}>
+      <Box
+        sx={{
+          my: 4,
+          px: 8,
+          [mobileScreen]: {
+            px: 2,
+          },
+        }}
+      >
         <Button
           variant={filter === "website" ? "contained" : "outlined"}
           fullWidth={false}

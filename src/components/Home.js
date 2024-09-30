@@ -46,7 +46,7 @@ function Home() {
                   fontSize: 70,
                 },
                 [mobileScreen]: {
-                  fontSize: 50,
+                  fontSize: 36,
                 },
               }}
             >
