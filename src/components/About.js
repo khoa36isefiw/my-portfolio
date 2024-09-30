@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 
@@ -14,7 +14,7 @@ import { mobileScreen } from "../theme/theme";
 
 function About() {
   return (
-    <Box
+    <Container
       sx={{
         [mobileScreen]: {
           width: "100%",
@@ -46,7 +46,7 @@ function About() {
           data={mobileAppDevelopments}
         />
       </Box>
-    </Box>
+    </Container>
   );
 }
 
