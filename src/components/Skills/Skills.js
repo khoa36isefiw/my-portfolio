@@ -44,9 +44,10 @@ function Skills({ skill, data }) {
               sx={{
                 mt: 1,
                 mr: 2,
-                height: 56,
-                width: 56,
-                objectFit: "cover",
+                border: "1px solid #ccc",
+                height: "64px",
+                width: "64px",
+                objectFit: "fill",
                 // borderRadius: 0,
                 "&:hover": {
                   cursor: "pointer",
