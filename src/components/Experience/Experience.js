@@ -24,8 +24,22 @@ function Experience() {
           {listExperienceText.map((exp, index) => (
             <li key={index}>
               <CustomizeTypography sx={{ fontSize: "18px" }}>
-                {exp}
+                {exp.position}
               </CustomizeTypography>
+              <li>
+                <CustomizeTypography sx={{ fontSize: "18px" }}>
+                  Responsibilities:
+                </CustomizeTypography>
+              </li>
+              <ul style={{ paddingInlineStart: "20px", marginBlockStart: 0 }}>
+                {exp.responsibilities.map((resp, idx) => (
+                  <li key={idx}>
+                    <CustomizeTypography sx={{ fontSize: "16px" }}>
+                      {resp}
+                    </CustomizeTypography>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -37,8 +51,19 @@ function Experience() {
 export default Experience;
 
 const listExperienceText = [
-  "Work with position Front-end Developer part-time.",
-  "Met and worked with the design team.",
-  "Got feedback from the design team after completing the tasks.",
-  "Learned, researched, and applied animations to the project.",
+  {
+    position: "Work with position Front-end Developer part-time.",
+
+    responsibilities: [
+      "Developed the website application based on the feedback from the design.",
+      "Met and worked with the design team.",
+      "Got feedback from the design team after completing the tasks.",
+      "Learned, researched, and applied animations to the project.",
+    ],
+  },
 ];
+
+// "Work with position Front-end Developer part-time.",
+//   "Met and worked with the design team.",
+//   "Got feedback from the design team after completing the tasks.",
+//   "Learned, researched, and applied animations to the project.",
