@@ -1,8 +1,6 @@
-import { mobileScreen } from "../../theme/theme";
-
 const { styled, Typography } = require("@mui/material");
 
-export const CustomizeTypography = styled(Typography)(({}) => ({
+export const CustomizeTypography = styled(Typography)(() => ({
   fontSize: "14px",
   fontFamily: "Poppins",
 }));

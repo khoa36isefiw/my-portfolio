@@ -5,12 +5,11 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StoreIcon from "@mui/icons-material/Store";
-import PersonIcon from "@mui/icons-material/Person";
+
 import { useNavigate } from "react-router-dom";
 
 import { Typography } from "@mui/material";
 
-import Face5Icon from "@mui/icons-material/Face5";
 import { theme } from "../../theme/theme";
 
 export default function MobileBottomNavigation() {
@@ -19,10 +18,6 @@ export default function MobileBottomNavigation() {
 
   const handleNavigateHomePage = () => {
     navigate("/");
-  };
-
-  const handleNavigateSignIn = () => {
-    navigate("/sign-in");
   };
 
   const handleNavigateSearch = () => {

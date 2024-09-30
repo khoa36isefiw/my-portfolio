@@ -1,8 +1,7 @@
-import { Box, Grid2 } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { AboutTitle } from "../About";
 import { CustomizeTypography } from "../CustomizeTypography/CustomizeTypography";
-import { mobileScreen } from "../../theme/theme";
 
 function Experience() {
   return (

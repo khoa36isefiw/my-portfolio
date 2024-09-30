@@ -2,7 +2,6 @@ import { ArrowBackIos } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import React from "react";
 import { theme } from "../../theme/theme";
-import { yellow } from "@mui/material/colors";
 
 function ProjectDetails() {
   return (
