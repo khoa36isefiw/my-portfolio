@@ -15,6 +15,19 @@ function Header() {
   const [enLanguage, setEnLanguage] = useState(true);
   const [scrollY, setSrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 739);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 739);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const headers = [
     { title: "Home", exact: true, link: "/" },
     { title: "About", exact: true, link: "/about-me" },
@@ -89,28 +102,28 @@ function Header() {
           >
             K
           </Typography>
-
-          {headers.map((header, index) => (
-            <Typography
-              sx={{
-                fontSize: "18px",
-                mx: 6,
-                color: theme.palette.secondaryColor,
-                fontWeight: "bold",
-                "&:hover": {
-                  cursor: "pointer",
-                  color: blue[600],
-                },
-              }}
-              key={index}
-              onClick={() => navigate(header.link)}
-            >
-              {header.title}
-            </Typography>
-          ))}
+          {!isMobile &&
+            headers.map((header, index) => (
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  mx: 6,
+                  color: theme.palette.secondaryColor,
+                  fontWeight: "bold",
+                  "&:hover": {
+                    cursor: "pointer",
+                    color: blue[600],
+                  },
+                }}
+                key={index}
+                onClick={() => navigate(header.link)}
+              >
+                {header.title}
+              </Typography>
+            ))}
         </Box>
 
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: !isMobile ? "flex" : "none" }}>
           <Box
             sx={{
               height: "40px",
@@ -198,12 +211,15 @@ function Header() {
           </a>
         </Box>
         {/* Mobile Menu Icon */}
-        <IconButton
-          sx={{ display: { xs: "flex", md: "none" } }} // Only visible on mobile
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
+        {isMobile && (
+          <IconButton
+            sx={{ display: { xs: "flex", md: "none" } }}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </IconButton>
+        )}
+
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
           <Box
