@@ -27,7 +27,12 @@ function Projects() {
       }}
     >
       <CustomizeTypography
-        sx={{ fontSize: "20px", px: 8, [mobileScreen]: { px: 2 } }}
+        sx={{
+          fontSize: "20px",
+          px: 8,
+          [tabletScreen]: { px: 2 },
+          [mobileScreen]: { px: 2 },
+        }}
       >
         The list of projects below has been made by my team and me while we are
         studying at the university.
@@ -37,6 +42,7 @@ function Projects() {
         sx={{
           my: 4,
           px: 8,
+          [tabletScreen]: { px: 2 },
           [mobileScreen]: {
             px: 2,
           },
