@@ -20,17 +20,20 @@ function Projects() {
     <Container
       sx={{
         px: 2,
+
         [mobileScreen]: {
           px: 0,
         },
       }}
     >
-      <CustomizeTypography sx={{ fontSize: "20px", [mobileScreen]: { px: 2 } }}>
+      <CustomizeTypography
+        sx={{ fontSize: "20px", px: 8, [mobileScreen]: { px: 2 } }}
+      >
         The list of projects below has been made by my team and me while we are
         studying at the university.
       </CustomizeTypography>
       {/* filter button */}
-      <Box sx={{ my: 4 }}>
+      <Box sx={{ my: 4, px: 8 }}>
         <Button
           variant={filter === "website" ? "contained" : "outlined"}
           fullWidth={false}

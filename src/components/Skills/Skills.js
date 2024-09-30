@@ -45,8 +45,8 @@ function Skills({ skill, data }) {
                 mt: 1,
                 mr: 2,
                 border: "1px solid #ccc",
-                height: "64px",
-                width: "64px",
+                height: "48px",
+                width: "48px",
                 objectFit: "fill",
                 // borderRadius: 0,
                 "&:hover": {

@@ -11,7 +11,8 @@ import {
   mobileAppDevelopments,
   versionControl,
 } from "../data/skillsData";
-import { mobileScreen } from "../theme/theme";
+import { mobileScreen, theme } from "../theme/theme";
+import Experience from "./Experience/Experience";
 
 function About() {
   return (
@@ -34,6 +35,7 @@ function About() {
         Currently, I am working on my graduation project to prepare for
         graduation.
       </CustomizeTypography>
+      <Experience />
 
       <Box sx={{ mt: 2 }}>
         <AboutTitle title={"Skills"} />
@@ -55,12 +57,13 @@ function About() {
 
 export default About;
 
-const AboutTitle = ({ title }) => {
+export const AboutTitle = ({ title }) => {
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
+        color: theme.palette.secondaryColor,
         [mobileScreen]: {
           width: "90%",
         },

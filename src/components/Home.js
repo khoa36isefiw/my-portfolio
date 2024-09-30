@@ -54,22 +54,6 @@ function Home() {
             </CustomizeTypography>
           </Box>
         </Grid>
-        {/* <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
-          <Avatar
-            src={null}
-            alt="My Image"
-            sx={{
-              objectFit: "cover",
-              height: "100%",
-              width: "100%",
-              borderRadius: "31% 69% 25% 75% / 70% 35% 65% 30%",
-              [mobileScreen]: {
-                width: "100%",
-                height: "80%",
-              },
-            }}
-          />
-        </Grid> */}
       </Grid>
       <About />
     </Container>
