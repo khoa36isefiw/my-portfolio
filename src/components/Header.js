@@ -39,7 +39,7 @@ function Header() {
   }, []);
   const headers = [
     { title: "Home", exact: true, link: "/" },
-    { title: "About", exact: true, link: "/about-me" },
+    { title: "Blog", exact: true, link: "/blog" },
     { title: "Projects", exact: true, link: "/my-projects" },
   ];
 
@@ -200,7 +200,11 @@ function Header() {
               />
             </Box>
           )}
-          <a href={"https://github.com/khoa36isefiw"} target="_blank">
+          <a
+            href={"https://github.com/khoa36isefiw"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Tooltip
               title={
                 <Typography
@@ -337,7 +341,11 @@ function Header() {
                 />
               </Box>
             )}
-            <a href={"https://github.com/khoa36isefiw"} target="_blank">
+            <a
+              href={"https://github.com/khoa36isefiw"}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Tooltip
                 title={
                   <Typography

@@ -1,9 +1,14 @@
-import { Avatar, Box, Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
-import { mobileScreen, theme } from "../theme/theme";
-import back from "../assets/images/rengoku_back.jpeg";
+import {
+  ipadProScreen,
+  mobileScreen,
+  tabletScreen,
+  theme,
+} from "../theme/theme";
 import Grid from "@mui/material/Grid2";
+import About from "./About";
 
 function Home() {
   return (
@@ -33,6 +38,13 @@ function Home() {
                 color: theme.palette.secondaryColor,
                 fontWeight: "bold",
                 width: "100%",
+
+                [ipadProScreen]: {
+                  fontSize: 80,
+                },
+                [tabletScreen]: {
+                  fontSize: 70,
+                },
                 [mobileScreen]: {
                   fontSize: 50,
                 },
@@ -59,6 +71,7 @@ function Home() {
           />
         </Grid> */}
       </Grid>
+      <About />
     </Container>
   );
 }

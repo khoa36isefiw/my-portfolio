@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 
@@ -14,7 +14,7 @@ import { mobileScreen } from "../theme/theme";
 
 function About() {
   return (
-    <Container
+    <Box
       sx={{
         [mobileScreen]: {
           width: "100%",
@@ -46,7 +46,7 @@ function About() {
           data={mobileAppDevelopments}
         />
       </Box>
-    </Container>
+    </Box>
   );
 }
 
@@ -63,24 +63,9 @@ const AboutTitle = ({ title }) => {
         },
       }}
     >
-      <CustomizeTypography
-        sx={{ fontSize: "32px", color: "yellowgreen", fontWeight: "bold" }}
-      >
-        {title}
-        {/* About me */}
+      <CustomizeTypography sx={{ fontSize: "32px", fontWeight: "bold" }}>
+        {title}.{/* About me */}
       </CustomizeTypography>
-      <Box
-        sx={{
-          ml: 2,
-          mt: 1,
-          height: 4,
-          width: "180px",
-          bgcolor: "yellowgreen",
-          [mobileScreen]: {
-            width: "120px",
-          },
-        }}
-      />
     </Box>
   );
 };
