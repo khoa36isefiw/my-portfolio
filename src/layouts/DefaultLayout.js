@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 function DefaultLayout({ children }) {
   return (
-    <Box sx={{ height: "200vh" }}>
+    <Box>
       <Header />
 
       <Box sx={{ mt: 10 }}>{children}</Box>
