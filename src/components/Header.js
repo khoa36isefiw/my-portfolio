@@ -1,4 +1,12 @@
-import { Box, Container, IconButton, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  IconButton,
+  Tooltip,
+  Typography,
+  Dialog,
+  DialogContent,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import reactImage from "../assets/images/physics.png";
@@ -210,39 +218,45 @@ function Header() {
             </Tooltip>
           </a>
         </Box>
+
         {/* Mobile Menu Icon */}
         {isMobile && (
           <IconButton
             sx={{ display: { xs: "flex", md: "none" } }}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(true)}
           >
-            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+            <MenuIcon sx={{ fontSize: "32px" }} />
           </IconButton>
         )}
 
-        {/* Mobile Dropdown Menu */}
-        {menuOpen && (
-          <Box
-            sx={{
-              display: { xs: "block", md: "none" },
-              position: "absolute",
-              top: "60px",
-              width: "100%",
-              backgroundColor: "white",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-              zIndex: 9,
-            }}
-          >
+        {/* Mobile Modal */}
+        <Dialog open={menuOpen} onClose={() => setMenuOpen(false)} fullScreen>
+          <DialogContent sx={{ bgcolor: "white", padding: 4 }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                mb: 3,
+              }}
+            >
+              <Typography sx={{ fontSize: "24px", fontWeight: "bold" }}>
+                Menu
+              </Typography>
+              <IconButton onClick={() => setMenuOpen(false)}>
+                <CloseIcon sx={{ fontSize: "32px" }} />
+              </IconButton>
+            </Box>
+
             {headers.map((header, index) => (
               <Typography
                 key={index}
                 sx={{
-                  padding: "10px",
                   fontSize: "18px",
-                  borderBottom: "1px solid #eee",
+                  mb: 2,
                   "&:hover": {
                     cursor: "pointer",
-                    backgroundColor: "#f1f1f1",
+                    color: blue[600],
                   },
                 }}
                 onClick={() => {
@@ -253,8 +267,8 @@ function Header() {
                 {header.title}
               </Typography>
             ))}
-          </Box>
-        )}
+          </DialogContent>
+        </Dialog>
       </Container>
     </Box>
   );
