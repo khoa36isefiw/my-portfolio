@@ -20,7 +20,6 @@ function Projects() {
     <Container
       sx={{
         px: 2,
-
         [mobileScreen]: {
           px: 0,
         },
@@ -110,19 +109,20 @@ const ProjectList = ({ projectsData, filter }) => {
     (item) => item.projectType === filter
   );
 
-  console.log("project type is: ", filter, " and it data: ", listProject);
   return (
     <React.Fragment>
       {listProject.map((data) => (
         <Grid2
           key={data.projectId}
-          container
+          // container
           sx={{
             borderRadius: 4,
             height: 450,
 
-            boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 15px",
-            my: 4,
+            boxShadow: mobileScreen
+              ? "none"
+              : "rgba(0, 0, 0, 0.35) 0px 0px 15px",
+            // my: 4,
             [tabletScreen]: {
               height: "100%",
               width: "100%",
@@ -137,7 +137,17 @@ const ProjectList = ({ projectsData, filter }) => {
             },
           }}
         >
-          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
+          <Grid2
+            item
+            size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
+            sx={{
+              [mobileScreen]: {
+                "&.MuiGrid2-root": {
+                  height: "300px",
+                },
+              },
+            }}
+          >
             <Box
               sx={{
                 height: "100%",
@@ -151,6 +161,9 @@ const ProjectList = ({ projectsData, filter }) => {
                 borderBottomLeftRadius: 16,
                 [mobileScreen]: {
                   borderRadius: 0,
+                  "&.MuiGrid2-root": {
+                    height: "300px",
+                  },
                 },
               }}
             >
@@ -233,17 +246,7 @@ const ProjectList = ({ projectsData, filter }) => {
               </Box>
             </Box>
           </Grid2>
-          <Grid2
-            item
-            size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
-            sx={
-              {
-                // [mobileScreen]: {
-                //   height: "300px",
-                // },
-              }
-            }
-          >
+          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
             <Box
               component={"img"}
               src={data.projectImage}
@@ -265,6 +268,8 @@ const ProjectList = ({ projectsData, filter }) => {
                   height: "300px",
                   width: "100%",
                   borderTop: "1px solid #ccc",
+                  objectFit: "cover",
+                  borderBottom: "1px solid #ccc",
                 },
               }}
             />
