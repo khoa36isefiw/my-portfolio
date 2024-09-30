@@ -1,9 +1,10 @@
 import { Box, Button, Container } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import ShareIcon from "@mui/icons-material/Share";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid2 from "@mui/material/Grid2";
+// import Grid from "@mui/material/Grid2";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
 
@@ -104,30 +105,33 @@ function Projects() {
 export default Projects;
 
 const ProjectList = ({ projectsData, filter }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 739);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 739);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   // render project list: webiste and mobile application
   const listProject = projectsData.filter(
     (item) => item.projectType === filter
   );
 
   return (
-    <React.Fragment>
+    <Box>
       {listProject.map((data) => (
         <Grid2
           key={data.projectId}
-          // container
+          container={!isMobile}
           sx={{
             borderRadius: 4,
-            height: 450,
-
-            boxShadow: mobileScreen
-              ? "none"
-              : "rgba(0, 0, 0, 0.35) 0px 0px 15px",
-            // my: 4,
-            [tabletScreen]: {
-              height: "100%",
-              width: "100%",
-              my: 4,
-            },
+            boxShadow: isMobile ? "none" : "rgba(0, 0, 0, 0.35) 0px 0px 15px",
+            my: 4,
             [mobileScreen]: {
               height: "auto",
               width: "100%",
@@ -141,11 +145,7 @@ const ProjectList = ({ projectsData, filter }) => {
             item
             size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
             sx={{
-              [mobileScreen]: {
-                "&.MuiGrid2-root": {
-                  height: "300px",
-                },
-              },
+              height: "350px",
             }}
           >
             <Box
@@ -161,9 +161,6 @@ const ProjectList = ({ projectsData, filter }) => {
                 borderBottomLeftRadius: 16,
                 [mobileScreen]: {
                   borderRadius: 0,
-                  "&.MuiGrid2-root": {
-                    height: "300px",
-                  },
                 },
               }}
             >
@@ -246,7 +243,13 @@ const ProjectList = ({ projectsData, filter }) => {
               </Box>
             </Box>
           </Grid2>
-          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
+          <Grid2
+            item
+            size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
+            sx={{
+              height: "350px",
+            }}
+          >
             <Box
               component={"img"}
               src={data.projectImage}
@@ -255,11 +258,15 @@ const ProjectList = ({ projectsData, filter }) => {
                 borderRadius: 0,
                 borderTopRightRadius: 16,
                 borderBottomRightRadius: 16,
-                height: "100%",
+                height: "350px",
                 width: "100%",
                 objectFit: "cover",
+                borderLeft: "1px solid #ccc",
+
                 [tabletScreen]: {
                   borderRadius: 0,
+                  borderTopRightRadius: 16,
+                  borderBottomRightRadius: 16,
                   height: "100%",
                   width: "100%",
                 },
@@ -276,6 +283,6 @@ const ProjectList = ({ projectsData, filter }) => {
           </Grid2>
         </Grid2>
       ))}
-    </React.Fragment>
+    </Box>
   );
 };
