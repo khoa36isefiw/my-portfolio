@@ -4,7 +4,7 @@ import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import ShareIcon from "@mui/icons-material/Share";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid2 from "@mui/material/Grid2";
-import { mobileScreen, theme } from "../theme/theme";
+import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
 import { useNavigate } from "react-router-dom";
 
@@ -70,6 +70,10 @@ function Projects() {
         sx={{
           px: 8,
           my: 4,
+          [tabletScreen]: {
+            px: 0,
+            my: 0,
+          },
           [mobileScreen]: {
             px: 0,
             my: 0,
@@ -115,6 +119,11 @@ const ProjectList = ({ projectsData, filter }) => {
 
             boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 15px",
             my: 4,
+            [tabletScreen]: {
+              height: "100%",
+              width: "100%",
+              my: 4,
+            },
             [mobileScreen]: {
               height: "auto",
               width: "100%",
@@ -223,11 +232,13 @@ const ProjectList = ({ projectsData, filter }) => {
           <Grid2
             item
             size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
-            sx={{
-              [mobileScreen]: {
-                height: "300px",
-              },
-            }}
+            sx={
+              {
+                // [mobileScreen]: {
+                //   height: "300px",
+                // },
+              }
+            }
           >
             <Box
               component={"img"}
@@ -240,6 +251,11 @@ const ProjectList = ({ projectsData, filter }) => {
                 height: "100%",
                 width: "100%",
                 objectFit: "cover",
+                [tabletScreen]: {
+                  borderRadius: 0,
+                  height: "100%",
+                  width: "100%",
+                },
                 [mobileScreen]: {
                   borderRadius: 0,
                   height: "300px",
