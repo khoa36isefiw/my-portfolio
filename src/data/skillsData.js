@@ -1,3 +1,5 @@
+import SASS from "../assets/images/G_bPMEZJW-removebg-preview.png";
+import NodeJS from "../assets/images/nodejs-remove.png";
 export const languagesData = [
   {
     image:
@@ -21,51 +23,55 @@ export const databaseData = [
 export const frontEndDevelopments = [
   {
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s",
+      "https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png",
     name: "ReactJS",
   },
 
   {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR01L6Jq6BvPIjmhTliTvigg2nAADj_Z-cfPw&s",
+    image: SASS,
     name: "SASS",
   },
   {
     image:
-      "https://w7.pngwing.com/pngs/761/513/png-transparent-material-ui-logo.png",
+      "https://logowik.com/content/uploads/images/mui-material-ui9415.logowik.com.webp",
     name: "Material UI",
   },
   {
     image:
-      "https://w7.pngwing.com/pngs/293/485/png-transparent-tailwind-css-hd-logo.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s",
     name: "Tailwind CSS",
   },
 
   {
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKonqa9PQ5az3aGx6-H7f7gyQOuIOBwGMElg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtQZutuVAXi7boyDVdqMC_4xGIHBVaIUT7X8_bCZa6AYItzKGimXQg7rUXoEx-hLCnsaw&usqp=CAU",
     name: "Redux",
   },
 ];
 
 export const backEndDevelopments = [
   {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYrNVwxlBhUzwBd6H4YqdJckckasr4N6PjQw&s",
+    image: NodeJS,
     name: "NodeJS",
   },
 
   {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKonqa9PQ5az3aGx6-H7f7gyQOuIOBwGMElg&s",
-    name: "Redux",
+    image: "https://www.factfc.com/wp-content/uploads/2024/04/express-js.png",
+    name: "Express",
   },
 ];
 
 export const mobileAppDevelopments = [
   {
     image:
-      "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKZfF6a5sM19EW71iIlrzRBuuLJMCMxQ7vTQ&s",
     name: "React Native",
+  },
+];
+
+export const versionControl = [
+  {
+    image: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+    name: "Github",
   },
 ];
