@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Container } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import ShareIcon from "@mui/icons-material/Share";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -18,7 +18,7 @@ function Projects() {
     setFilter("mobile");
   };
   return (
-    <Box
+    <Container
       sx={{
         px: 2,
         [mobileScreen]: {
@@ -26,7 +26,7 @@ function Projects() {
         },
       }}
     >
-      <CustomizeTypography sx={{ fontSize: "20px" }}>
+      <CustomizeTypography sx={{ fontSize: "20px", [mobileScreen]: { px: 2 } }}>
         The list of projects below has been made by my team and me while we are
         studying at the university.
       </CustomizeTypography>
@@ -78,13 +78,25 @@ function Projects() {
       >
         <ProjectList projectsData={projectsData} filter={filter} />
       </Box>
-    </Box>
+    </Container>
   );
 }
 
 export default Projects;
 
 const ProjectList = ({ projectsData, filter }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 739);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 739);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   // render project list: webiste and mobile application
   const listProject = projectsData.filter(
     (item) => item.projectType === filter
@@ -100,11 +112,15 @@ const ProjectList = ({ projectsData, filter }) => {
           sx={{
             borderRadius: 4,
             height: 450,
+
             boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 15px",
             my: 4,
             [mobileScreen]: {
+              height: "auto",
               width: "100%",
-              my: 0,
+              borderRadius: 0,
+              my: 8,
+              flexDirection: "column-reverse",
             },
           }}
         >
@@ -120,6 +136,9 @@ const ProjectList = ({ projectsData, filter }) => {
                 justifyContent: "center",
                 borderTopLeftRadius: 16,
                 borderBottomLeftRadius: 16,
+                [mobileScreen]: {
+                  borderRadius: 0,
+                },
               }}
             >
               <CustomizeTypography
@@ -201,18 +220,32 @@ const ProjectList = ({ projectsData, filter }) => {
               </Box>
             </Box>
           </Grid2>
-          <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
-            <Avatar
+          <Grid2
+            item
+            size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
+            sx={{
+              [mobileScreen]: {
+                height: "300px",
+              },
+            }}
+          >
+            <Box
+              component={"img"}
               src={data.projectImage}
               alt="Gimme Shoes Project"
               sx={{
                 borderRadius: 0,
                 borderTopRightRadius: 16,
                 borderBottomRightRadius: 16,
-
                 height: "100%",
                 width: "100%",
                 objectFit: "cover",
+                [mobileScreen]: {
+                  borderRadius: 0,
+                  height: "300px",
+                  width: "100%",
+                  borderTop: "1px solid #ccc",
+                },
               }}
             />
           </Grid2>
