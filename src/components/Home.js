@@ -52,7 +52,7 @@ function Home() {
               width: "100%",
               borderRadius: "31% 69% 25% 75% / 70% 35% 65% 30%",
               [mobileScreen]: {
-                width: "80%",
+                width: "100%",
                 height: "80%",
               },
             }}
