@@ -6,6 +6,7 @@ import {
   Typography,
   Dialog,
   DialogContent,
+  DialogActions,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
@@ -268,6 +269,95 @@ function Header() {
               </Typography>
             ))}
           </DialogContent>
+          <DialogActions>
+            <Box
+              sx={{
+                height: "40px",
+                width: "40px",
+                border: "1px solid #ccc",
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                mr: 2,
+                zIndex: 12,
+              }}
+            >
+              <Box
+                sx={{ height: "36px", width: "36px" }}
+                src={reactImage}
+                alt="React Image"
+                component={"img"}
+              />
+            </Box>
+
+            {enLanguage ? (
+              <Box
+                sx={{
+                  height: "40px",
+                  width: "40px",
+                  border: "1px solid #ccc",
+                  borderRadius: "50%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+                onClick={handleSelectedLanguage}
+              >
+                <Box
+                  sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
+                  src={UKFlag}
+                  alt="React Image"
+                  component={"img"}
+                />
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  height: "40px",
+                  width: "40px",
+                  border: "1px solid #ccc",
+                  borderRadius: "50%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+                onClick={handleSelectedLanguage}
+              >
+                <Box
+                  sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
+                  src={VNFlag}
+                  alt="React Image"
+                  component={"img"}
+                />
+              </Box>
+            )}
+            <a href={"https://github.com/khoa36isefiw"} target="_blank">
+              <Tooltip
+                title={
+                  <Typography
+                    sx={{
+                      fontSize: "13px",
+                      mb: 0,
+                    }}
+                  >
+                    My Repository
+                  </Typography>
+                }
+              >
+                <IconButton
+                  sx={{ padding: 0, ml: 2, border: "1px solid #ccc" }}
+                >
+                  <GitHubIcon sx={{ fontSize: "40px", color: "black" }} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </DialogActions>
         </Dialog>
       </Container>
     </Box>
