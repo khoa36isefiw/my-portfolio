@@ -1,7 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 import React from "react";
 import { AboutTitle } from "../About";
 import { CustomizeTypography } from "../CustomizeTypography/CustomizeTypography";
+import { mobileScreen } from "../../theme/theme";
 
 function Experience() {
   return (
@@ -12,39 +13,33 @@ function Experience() {
       >
         Level Up Studio Company
       </CustomizeTypography>
-      <DesignList />
+
+      <Box sx={{ px: 2 }}>
+        <ul
+          style={{
+            marginBlockStart: 0,
+            marginBlockEnd: 0,
+            paddingInlineStart: 0,
+          }}
+        >
+          {listExperienceText.map((exp, index) => (
+            <li key={index}>
+              <CustomizeTypography sx={{ fontSize: "18px" }}>
+                {exp}
+              </CustomizeTypography>
+            </li>
+          ))}
+        </ul>
+      </Box>
     </Box>
   );
 }
 
 export default Experience;
 
-const DesignList = () => {
-  return (
-    <Box>
-      {listExperienceText.map((exp, index) => (
-        <Box sx={{ display: "flex", alignItems: "center" }} key={index}>
-          <Box
-            sx={{
-              height: "8px",
-              width: "8px",
-              borderRadius: "50%",
-              bgcolor: "#000",
-              mr: 1,
-            }}
-          />
-          <CustomizeTypography sx={{ fontSize: "18px" }}>
-            {exp}
-          </CustomizeTypography>
-        </Box>
-      ))}
-    </Box>
-  );
-};
-
 const listExperienceText = [
   "Work with position Front-end Developer part-time.",
   "Met and worked with the design team.",
-  "Got feedback from design team after completing the tasks.",
+  "Got feedback from the design team after completing the tasks.",
   "Learned, researched, and applied animations to the project.",
 ];
