@@ -9,6 +9,7 @@ import {
   frontEndDevelopments,
   backEndDevelopments,
   mobileAppDevelopments,
+  versionControl,
 } from "../data/skillsData";
 import { mobileScreen } from "../theme/theme";
 
@@ -45,6 +46,8 @@ function About() {
           skill={"Mobile App Developments"}
           data={mobileAppDevelopments}
         />
+
+        <Skills skill={"Version Control"} data={versionControl} />
       </Box>
     </Box>
   );
