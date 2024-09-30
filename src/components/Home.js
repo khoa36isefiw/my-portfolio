@@ -22,7 +22,7 @@ function Home() {
           },
         }}
       >
-        <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
+        <Grid item size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
           <Box>
             <CustomizeTypography sx={{ fontSize: 28, fontWeight: "600" }}>
               Hello I'm Khoa,
@@ -42,9 +42,9 @@ function Home() {
             </CustomizeTypography>
           </Box>
         </Grid>
-        <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
+        {/* <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6 }}>
           <Avatar
-            src={back}
+            src={null}
             alt="My Image"
             sx={{
               objectFit: "cover",
@@ -57,7 +57,7 @@ function Home() {
               },
             }}
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );
