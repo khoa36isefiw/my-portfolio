@@ -1,12 +1,11 @@
-import { Avatar, Box, Button, Container } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { Box, Button, Container } from "@mui/material";
+import React, { useState } from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import ShareIcon from "@mui/icons-material/Share";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid2 from "@mui/material/Grid2";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
-import { useNavigate } from "react-router-dom";
 
 function Projects() {
   const [filter, setFilter] = useState("website");
@@ -89,18 +88,6 @@ function Projects() {
 export default Projects;
 
 const ProjectList = ({ projectsData, filter }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 739);
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 739);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   // render project list: webiste and mobile application
   const listProject = projectsData.filter(
     (item) => item.projectType === filter
@@ -187,7 +174,7 @@ const ProjectList = ({ projectsData, filter }) => {
               >
                 {/* Link to live preview */}
                 {data.linkDeployed && (
-                  <a href={data.linkDeployed} target="_blank">
+                  <a href={data.linkDeployed} target="_blank" rel="noreferrer">
                     <Button
                       startIcon={<ShareIcon />}
                       sx={{
@@ -209,7 +196,7 @@ const ProjectList = ({ projectsData, filter }) => {
                 )}
 
                 {/* source code */}
-                <a href={data.linkSourceCode} target="_blank">
+                <a href={data.linkSourceCode} target="_blank" rel="noreferrer">
                   <Button
                     startIcon={<GitHubIcon />}
                     sx={{

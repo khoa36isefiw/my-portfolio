@@ -30,7 +30,7 @@ function Home() {
         <Grid item size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
           <Box>
             <CustomizeTypography sx={{ fontSize: 28, fontWeight: "600" }}>
-              Hello I'm Khoa,
+              Hello There! <br /> I'm Khoa,
             </CustomizeTypography>
             <CustomizeTypography
               sx={{

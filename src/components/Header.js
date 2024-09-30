@@ -39,8 +39,8 @@ function Header() {
   }, []);
   const headers = [
     { title: "Home", exact: true, link: "/" },
-    { title: "Blog", exact: true, link: "/blog" },
     { title: "Projects", exact: true, link: "/my-projects" },
+    { title: "Blog", exact: true, link: "/blog" },
   ];
 
   const handleSelectedLanguage = () => {
@@ -344,7 +344,7 @@ function Header() {
             <a
               href={"https://github.com/khoa36isefiw"}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <Tooltip
                 title={
