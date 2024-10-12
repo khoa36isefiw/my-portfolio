@@ -73,6 +73,14 @@ function Header() {
     setEnLanguage(!enLanguage);
     i18n.changeLanguage(lng);
   };
+
+  const handleBackHome = () => {
+    if (window.location.pathname.includes("/vi")) {
+      window.location.replace("/vi");
+    } else {
+      window.location.replace("/en");
+    }
+  };
   return (
     <Box
       sx={{
@@ -120,7 +128,8 @@ function Header() {
                 cursor: "pointer",
               },
             }}
-            onClick={() => navigate("/en")}
+            // onClick={() => navigate("/en")}
+            onClick={handleBackHome}
           >
             K
           </Typography>
