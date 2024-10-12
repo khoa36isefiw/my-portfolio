@@ -42,33 +42,33 @@ function About() {
         {/* 
         grid  */}
         <Grid2 container spacing={4}>
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills skill={"Languages"} data={languagesData} />
           </Grid2>
 
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills
               skill={"Front-end Developments"}
               data={frontEndDevelopments}
             />
           </Grid2>
 
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills
               skill={"Back-end Developments"}
               data={backEndDevelopments}
             />
           </Grid2>
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills skill={"Database"} data={databaseData} />
           </Grid2>
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills
               skill={"Mobile App Developments"}
               data={mobileAppDevelopments}
             />
           </Grid2>
-          <Grid2 size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
+          <Grid2 item size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
             <Skills skill={"Version Control"} data={versionControl} />
           </Grid2>
         </Grid2>

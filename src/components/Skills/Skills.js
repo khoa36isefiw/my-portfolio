@@ -1,4 +1,4 @@
-import { Avatar, Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
 import TagIcon from "@mui/icons-material/Tag";
 import { CustomizeTypography } from "../CustomizeTypography/CustomizeTypography";
@@ -42,8 +42,8 @@ function Skills({ skill, data }) {
       </Box>
       <Box>
         {data.map((language, index) => (
-          <ul>
-            <li key={index}>
+          <ul key={index}>
+            <li>
               <Typography
                 sx={{
                   fontSize: "16px",

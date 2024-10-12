@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 import { CustomizeTypography } from "./CustomizeTypography/CustomizeTypography";
 import {
@@ -18,7 +18,7 @@ function Home() {
         sx={{
           mt: 10,
           display: "flex",
-          alignItems: "center",
+          flexDirection: "column",
           justifyContent: "center",
           [mobileScreen]: {
             flexDirection: "column",
@@ -27,32 +27,32 @@ function Home() {
           },
         }}
       >
-        <Grid item size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
-          <Box>
-            <CustomizeTypography sx={{ fontSize: 28, fontWeight: "600" }}>
-              Hello There! <br /> I'm Khoa,
-            </CustomizeTypography>
-            <CustomizeTypography
-              sx={{
-                fontSize: 100,
-                color: theme.palette.secondaryColor,
-                fontWeight: "bold",
-                width: "100%",
-
-                [ipadProScreen]: {
-                  fontSize: 80,
-                },
-                [tabletScreen]: {
-                  fontSize: 70,
-                },
-                [mobileScreen]: {
-                  fontSize: 36,
-                },
-              }}
-            >
-              Front-end Developer
-            </CustomizeTypography>
-          </Box>
+        {/* Correct Grid item usage */}
+        <Grid item xs={12} sm={12} md={12} lg={12}>
+          <CustomizeTypography sx={{ fontSize: 28, fontWeight: "600" }}>
+            Hello There! <br /> I'm Khoa,
+          </CustomizeTypography>
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
+          <CustomizeTypography
+            sx={{
+              fontSize: 100,
+              color: theme.palette.secondaryColor,
+              fontWeight: "bold",
+              width: "100%",
+              [ipadProScreen]: {
+                fontSize: 80,
+              },
+              [tabletScreen]: {
+                fontSize: 70,
+              },
+              [mobileScreen]: {
+                fontSize: 36,
+              },
+            }}
+          >
+            Front-end Developer
+          </CustomizeTypography>
         </Grid>
       </Grid>
       <About />
