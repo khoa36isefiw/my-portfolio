@@ -1,7 +1,8 @@
 {
-    "header": {
-        "Home": "Home",
-        "Projects": "Projects",
-        "Blog": "Blog"
-    }
+  "header": {
+    "Home": "Home",
+    "Projects": "Projects",
+    "Blog": "Blog"
+  },
+  "github": "My Repository"
 }

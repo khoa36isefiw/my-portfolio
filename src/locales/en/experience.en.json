@@ -1,7 +1,15 @@
 {
   "experience": {
-    "about_me": "About me",
-    "university": "I am a student from HCMC University of Technology and Education.",
-    "currently": "Currently, I am working on my graduation project to prepare for graduation."
+    "exp": "Experience",
+    "position": "Work with position Front-end Developer part-time.",
+    "responsible": "Responsibilities",
+
+    "responsibility1": "Developed the website application based on the feedback from the design.",
+
+    "responsibility2": "Met and worked with the design team.",
+
+    "responsibility3": "Got feedback from the design team after completing the tasks.",
+
+    "responsibility4": "Learned, researched, and applied animations to the project."
   }
 }
