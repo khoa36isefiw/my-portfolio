@@ -204,7 +204,7 @@ function Header() {
                       mb: 0,
                     }}
                   >
-                    Translate to Vietnamese
+                    Dịch sang tiếng Anh
                   </Typography>
                 }
               >
@@ -240,7 +240,7 @@ function Header() {
                       mb: 0,
                     }}
                   >
-                    Dịch sang tiếng Anh
+                    Translate to Vietnamese
                   </Typography>
                 }
               >
