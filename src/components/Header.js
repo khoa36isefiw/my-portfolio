@@ -9,7 +9,9 @@ import {
   DialogActions,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
+
 import reactImage from "../assets/images/physics.png";
 import VNFlag from "../assets/images/VN-circle.png";
 import UKFlag from "../assets/images/UK.png";
@@ -20,6 +22,7 @@ import { blue } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 function Header() {
+  const { t, i18n } = useTranslation(["home"]);
   const navigate = useNavigate();
   const [enLanguage, setEnLanguage] = useState(true);
   const [scrollY, setSrollY] = useState(0);
@@ -43,9 +46,9 @@ function Header() {
     { title: "Blog", exact: true, link: "/blog" },
   ];
 
-  const handleSelectedLanguage = () => {
-    setEnLanguage(!enLanguage);
-  };
+  // const handleSelectedLanguage = () => {
+  //   setEnLanguage(!enLanguage);
+  // };
 
   // handle scroll event
   const handleSroll = () => {
@@ -60,6 +63,17 @@ function Header() {
       window.removeEventListener("scroll", handleSroll);
     };
   }, []);
+
+  // change language
+  const handleChangeLanguage = (lng) => {
+    if (lng === "vi") {
+      navigate("/vi");
+    } else {
+      navigate("/en");
+    }
+    setEnLanguage(!enLanguage);
+    i18n.changeLanguage(lng);
+  };
   return (
     <Box
       sx={{
@@ -127,7 +141,10 @@ function Header() {
                 key={index}
                 onClick={() => navigate(header.link)}
               >
-                {header.title}
+                {/* {header.title} */}
+                {/* translate language in title */}
+
+                {t(`header.${header.title}`)}
               </Typography>
             ))}
         </Box>
@@ -155,7 +172,8 @@ function Header() {
             />
           </Box>
 
-          {enLanguage ? (
+          {!enLanguage ? (
+            // english language
             <Box
               sx={{
                 height: "40px",
@@ -168,7 +186,7 @@ function Header() {
                 justifyContent: "center",
                 cursor: "pointer",
               }}
-              onClick={handleSelectedLanguage}
+              onClick={() => handleChangeLanguage("en")}
             >
               <Box
                 sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
@@ -178,6 +196,7 @@ function Header() {
               />
             </Box>
           ) : (
+            // vietnamese
             <Box
               sx={{
                 height: "40px",
@@ -190,7 +209,7 @@ function Header() {
                 justifyContent: "center",
                 cursor: "pointer",
               }}
-              onClick={handleSelectedLanguage}
+              onClick={() => handleChangeLanguage("vi")}
             >
               <Box
                 sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
@@ -295,7 +314,7 @@ function Header() {
                 component={"img"}
               />
             </Box>
-
+            {/* mobile */}
             {enLanguage ? (
               <Box
                 sx={{
@@ -309,7 +328,7 @@ function Header() {
                   justifyContent: "center",
                   cursor: "pointer",
                 }}
-                onClick={handleSelectedLanguage}
+                onClick={() => handleChangeLanguage("en")}
               >
                 <Box
                   sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
@@ -331,7 +350,7 @@ function Header() {
                   justifyContent: "center",
                   cursor: "pointer",
                 }}
-                onClick={handleSelectedLanguage}
+                onClick={() => handleChangeLanguage("vi")}
               >
                 <Box
                   sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
