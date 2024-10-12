@@ -13,8 +13,10 @@ import {
 } from "../data/skillsData";
 import { mobileScreen, theme } from "../theme/theme";
 import Experience from "./Experience/Experience";
+import { useTranslation } from "react-i18next";
 
 function About() {
+  const { t } = useTranslation("about");
   return (
     <Box
       sx={{
@@ -23,18 +25,33 @@ function About() {
         },
       }}
     >
-      <AboutTitle title={"About me"} />
-      <CustomizeTypography
-        sx={{
-          fontSize: "18px",
+      <AboutTitle title={t("about.about_me")} />
+      <ul
+        style={{
+          marginBlockStart: 0,
+          marginBlockEnd: 0,
+          paddingInlineStart: "20px",
         }}
       >
-        I am a student from HCMC University of Technology and Education.
-      </CustomizeTypography>
-      <CustomizeTypography sx={{ fontSize: "18px" }}>
-        Currently, I am working on my graduation project to prepare for
-        graduation.
-      </CustomizeTypography>
+        <li>
+          <CustomizeTypography
+            sx={{
+              fontSize: "18px",
+            }}
+          >
+            {/* I am a student from HCMC University of Technology and Education. */}
+            {t("about.university")}
+          </CustomizeTypography>
+        </li>
+        <li>
+          <CustomizeTypography sx={{ fontSize: "18px" }}>
+            {t("about.currently")}
+            {/* Currently, I am working on my graduation project to prepare for
+        graduation. */}
+          </CustomizeTypography>
+        </li>
+      </ul>
+
       <Experience />
 
       <Box sx={{ mt: 2 }}>

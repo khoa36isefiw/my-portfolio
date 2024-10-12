@@ -22,7 +22,12 @@ import { blue } from "@mui/material/colors";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 function Header() {
-  const { t, i18n } = useTranslation(["home"]);
+  const { t, i18n } = useTranslation(["header"]);
+  const headers = [
+    { title: "Home", exact: true, link: `/${i18n.language}` },
+    { title: "Projects", exact: true, link: `/${i18n.language}/my-projects` },
+    { title: "Blog", exact: true, link: `/${i18n.language}/blog` },
+  ];
   const navigate = useNavigate();
   const [enLanguage, setEnLanguage] = useState(true);
   const [scrollY, setSrollY] = useState(0);
@@ -40,11 +45,6 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const headers = [
-    { title: "Home", exact: true, link: "/" },
-    { title: "Projects", exact: true, link: "/my-projects" },
-    { title: "Blog", exact: true, link: "/blog" },
-  ];
 
   // const handleSelectedLanguage = () => {
   //   setEnLanguage(!enLanguage);
@@ -66,11 +66,10 @@ function Header() {
 
   // change language
   const handleChangeLanguage = (lng) => {
-    if (lng === "vi") {
-      navigate("/vi");
-    } else {
-      navigate("/en");
-    }
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(`/${i18n.language}`, `/${lng}`);
+    console.log("newPath: ", newPath);
+    navigate(newPath);
     setEnLanguage(!enLanguage);
     i18n.changeLanguage(lng);
   };
@@ -121,7 +120,7 @@ function Header() {
                 cursor: "pointer",
               },
             }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/en")}
           >
             K
           </Typography>
@@ -288,7 +287,8 @@ function Header() {
                   setMenuOpen(false);
                 }}
               >
-                {header.title}
+                {/* {t(`header.${header.title}`)} */}
+                {t(`header.${header.title}`)}
               </Typography>
             ))}
           </DialogContent>
@@ -315,7 +315,7 @@ function Header() {
               />
             </Box>
             {/* mobile */}
-            {enLanguage ? (
+            {!enLanguage ? (
               <Box
                 sx={{
                   height: "40px",

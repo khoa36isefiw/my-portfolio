@@ -9,8 +9,10 @@ import {
 } from "../theme/theme";
 import Grid from "@mui/material/Grid2";
 import About from "./About";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t } = useTranslation("home");
   return (
     <Container>
       <Grid
@@ -22,7 +24,7 @@ function Home() {
           justifyContent: "center",
           [mobileScreen]: {
             flexDirection: "column",
-            alignItems: "center",
+            // alignItems: "center",
             justifyContent: "center",
           },
         }}
@@ -30,7 +32,9 @@ function Home() {
         {/* Correct Grid item usage */}
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <CustomizeTypography sx={{ fontSize: 28, fontWeight: "600" }}>
-            Hello There! <br /> I'm Khoa,
+            {/* {t(`header.${header.title}`)} */}
+            {t("home.intro.hello")} <br /> {t("home.intro.me")}
+            {/* Hello There! <br /> I'm Khoa, */}
           </CustomizeTypography>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -51,7 +55,8 @@ function Home() {
               },
             }}
           >
-            Front-end Developer
+            {t("home.intro.dev")}
+            {/* Front-end Developer */}
           </CustomizeTypography>
         </Grid>
       </Grid>
