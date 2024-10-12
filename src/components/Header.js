@@ -76,9 +76,9 @@ function Header() {
 
   const handleBackHome = () => {
     if (window.location.pathname.includes("/vi")) {
-      window.location.replace("/vi");
+      navigate("/vi");
     } else {
-      window.location.replace("/en");
+      navigate("/en");
     }
   };
   return (
