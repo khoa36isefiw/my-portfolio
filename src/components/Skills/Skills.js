@@ -2,12 +2,29 @@ import { Avatar, Box, IconButton, Tooltip, Typography } from "@mui/material";
 import React from "react";
 import TagIcon from "@mui/icons-material/Tag";
 import { CustomizeTypography } from "../CustomizeTypography/CustomizeTypography";
-import { theme } from "../../theme/theme";
+import { mobileScreen, tabletScreen, theme } from "../../theme/theme";
 
 function Skills({ skill, data }) {
   return (
-    <Box sx={{ mb: 2 }}>
-      <Box>
+    <Box
+      sx={{
+        mb: 2,
+        mr: 2,
+
+        minHeight: "250px",
+        border: "1px solid #ccc",
+        [tabletScreen]: {
+          width: "100%",
+        },
+        [mobileScreen]: {
+          width: "100%",
+          mr: 0,
+        },
+      }}
+    >
+      {/* title for skill */}
+
+      <Box sx={{ borderBottom: "1px solid #ccc" }}>
         <CustomizeTypography
           sx={{
             fontSize: "24px",
@@ -23,38 +40,19 @@ function Skills({ skill, data }) {
           {skill}
         </CustomizeTypography>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box>
         {data.map((language, index) => (
-          <Tooltip
-            key={index}
-            title={
+          <ul>
+            <li key={index}>
               <Typography
                 sx={{
-                  fontSize: "13px",
-                  mb: 0,
+                  fontSize: "16px",
                 }}
               >
                 {language.name}
               </Typography>
-            }
-          >
-            <Avatar
-              src={language.image}
-              alt={language.name}
-              sx={{
-                mt: 1,
-                mr: 2,
-                border: "1px solid #ccc",
-                height: "48px",
-                width: "48px",
-                objectFit: "fill",
-                // borderRadius: 0,
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            />
-          </Tooltip>
+            </li>
+          </ul>
         ))}
       </Box>
     </Box>
