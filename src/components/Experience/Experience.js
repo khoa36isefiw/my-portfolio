@@ -22,17 +22,17 @@ function Experience() {
           }}
         >
           {listExperienceText.map((exp, index) => (
-            <li key={index}>
-              <CustomizeTypography sx={{ fontSize: "18px" }}>
-                {exp.position}
-              </CustomizeTypography>
-              <ul>
-                <li>
-                  <CustomizeTypography sx={{ fontSize: "18px" }}>
-                    Responsibilities:
-                  </CustomizeTypography>
-                </li>
-              </ul>
+            <Box key={index}>
+              <li>
+                <CustomizeTypography sx={{ fontSize: "18px" }}>
+                  {exp.position}
+                </CustomizeTypography>
+              </li>
+              <li>
+                <CustomizeTypography sx={{ fontSize: "18px" }}>
+                  Responsibilities:
+                </CustomizeTypography>
+              </li>
               <ul style={{ paddingInlineStart: "20px", marginBlockStart: 0 }}>
                 {exp.responsibilities.map((resp, idx) => (
                   <li key={idx}>
@@ -42,7 +42,7 @@ function Experience() {
                   </li>
                 ))}
               </ul>
-            </li>
+            </Box>
           ))}
         </ul>
       </Box>
