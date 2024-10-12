@@ -7,8 +7,10 @@ import Grid2 from "@mui/material/Grid2";
 // import Grid from "@mui/material/Grid2";
 import { mobileScreen, tabletScreen, theme } from "../theme/theme";
 import { projectsData } from "../data/projectsData";
+import { useTranslation } from "react-i18next";
 
 function Projects() {
+  const { t } = useTranslation("projects");
   const [filter, setFilter] = useState("website");
 
   const handleWebsiteFilterSelected = () => {
@@ -34,8 +36,9 @@ function Projects() {
           [mobileScreen]: { px: 2 },
         }}
       >
-        The list of projects below has been made by my team and me while we are
-        studying at the university.
+        {t("projects.intro")}
+        {/* The list of projects below has been made by my team and me while we are
+        studying at the university. */}
       </CustomizeTypography>
       {/* filter button */}
       <Box
@@ -63,7 +66,8 @@ function Projects() {
           }}
           onClick={handleWebsiteFilterSelected}
         >
-          Websites
+          {/* Websites */}
+          {t("projects.webFilter")}
         </Button>
         <Button
           variant={filter === "mobile" ? "contained" : "outlined"}
@@ -79,7 +83,8 @@ function Projects() {
           }}
           onClick={handleMobileAppFilterSelected}
         >
-          Mobile App
+          {/* Mobile App */}
+          {t("projects.mobileFilter")}
         </Button>
       </Box>
       <Box
@@ -105,6 +110,7 @@ function Projects() {
 export default Projects;
 
 const ProjectList = ({ projectsData, filter }) => {
+  const { t } = useTranslation("projects");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 739);
 
   const handleResize = () => {
@@ -181,7 +187,8 @@ const ProjectList = ({ projectsData, filter }) => {
                 sx={{ fontSize: "20px", mb: 1, mx: 4, width: "90%" }}
               >
                 {/* Developing an e-commerece website to selling shoes */}
-                <strong>Description:</strong> {data.desc}
+                <strong>{t("projects.des")}:</strong>{" "}
+                {t(`projects.${data.desc}`)}
               </CustomizeTypography>
               <CustomizeTypography
                 sx={{
@@ -191,7 +198,8 @@ const ProjectList = ({ projectsData, filter }) => {
                   width: "90%",
                 }}
               >
-                <strong>Technologies:</strong> {data.technologies.join(", ")}
+                <strong>{t("projects.technologies")}:</strong>{" "}
+                {data.technologies.join(", ")}
               </CustomizeTypography>
               <Box
                 sx={{
