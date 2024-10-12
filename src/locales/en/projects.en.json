@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "intro": "The list of projects below has been made by my team and me while we are studying at the university.",
+
+    "webFilter": "Websites",
+    "mobileFilter": "Mobile App",
+    "des": "Description",
+    "technologies": "Technologies",
+    "projectDes1": "Developing an e-commerece website to selling shoes",
+    "projectDes2": "Build a website to introduce a game company and research how to use animations for the website.",
+    "projectDes3": "Developing a simple career social media website. With some basic features of the social application.",
+    "projectDes4": "Developing an e-commerce website to sell perfume products. With some essential features of the e-commerce website.",
+    "projectDes5": "Developing a simple travel application UI in React Native with expo router for navigating between different screens of the app.",
+    "projectDes6": ""
+  }
+}
