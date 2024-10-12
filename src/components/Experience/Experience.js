@@ -26,11 +26,13 @@ function Experience() {
               <CustomizeTypography sx={{ fontSize: "18px" }}>
                 {exp.position}
               </CustomizeTypography>
-              <li>
-                <CustomizeTypography sx={{ fontSize: "18px" }}>
-                  Responsibilities:
-                </CustomizeTypography>
-              </li>
+              <ul>
+                <li>
+                  <CustomizeTypography sx={{ fontSize: "18px" }}>
+                    Responsibilities:
+                  </CustomizeTypography>
+                </li>
+              </ul>
               <ul style={{ paddingInlineStart: "20px", marginBlockStart: 0 }}>
                 {exp.responsibilities.map((resp, idx) => (
                   <li key={idx}>
