@@ -4,8 +4,14 @@ import { Box } from "@mui/material";
 
 import { publicRoutes } from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      window.location.replace("/en");
+    }
+  }, []);
   return (
     <Box>
       <Router>

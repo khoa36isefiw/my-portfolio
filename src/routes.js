@@ -5,7 +5,8 @@ import DefaultLayout from "./layouts/DefaultLayout";
 
 // not sign into this website
 const publicRoutes = [
-  { path: "/", component: Home, layout: DefaultLayout },
+  { path: "/en", component: Home, layout: DefaultLayout },
+  { path: "/vi", component: Home, layout: DefaultLayout },
   { path: "/blog", component: Blog, layout: DefaultLayout },
   {
     path: "/my-projects",
