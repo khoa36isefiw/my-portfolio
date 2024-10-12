@@ -5,6 +5,7 @@ export const languagesData = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
     name: "Javascript",
+    
   },
   {
     image: "https://believeit.fr/fichiers/TypeScript.jpg",
