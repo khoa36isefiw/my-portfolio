@@ -1,7 +1,9 @@
 {
-    "header": {
-        "Home": "Trang chủ",
-        "Projects": "Dự án",
-        "Blog": "Bài viết"
+  "home": {
+    "intro": {
+      "hello": "Xin chào!",
+      "me": "Tôi là Khoa,",
+      "dev": "Lập trình viên Front-end"
     }
+  }
 }

@@ -1,7 +1,9 @@
 {
-    "header": {
-        "Home": "Home",
-        "Projects": "Projects",
-        "Blog": "Blog"
+  "home": {
+    "intro": {
+      "hello": "Hello There!",
+      "me": "I'm Khoa,",
+      "dev": "Front-end Developer"
     }
+  }
 }
