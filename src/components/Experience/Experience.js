@@ -2,11 +2,13 @@ import { Box } from "@mui/material";
 import React from "react";
 import { AboutTitle } from "../About";
 import { CustomizeTypography } from "../CustomizeTypography/CustomizeTypography";
+import { useTranslation } from "react-i18next";
 
 function Experience() {
+  const { t } = useTranslation("experience");
   return (
     <Box sx={{ mt: 2 }}>
-      <AboutTitle title={"Experience"} />
+      <AboutTitle title={t("experience.exp")} />
       <CustomizeTypography
         sx={{ fontSize: "24px", textDecoration: "underline" }}
       >
@@ -25,22 +27,23 @@ function Experience() {
             <Box key={index}>
               <li>
                 <CustomizeTypography sx={{ fontSize: "18px" }}>
-                  {exp.position}
+                  {t(`experience.${exp.position}`)}
                 </CustomizeTypography>
               </li>
               <li>
                 <CustomizeTypography sx={{ fontSize: "18px" }}>
-                  Responsibilities:
+                  {t("experience.responsible")}:
                 </CustomizeTypography>
               </li>
               <ul style={{ paddingInlineStart: "20px", marginBlockStart: 0 }}>
                 {exp.responsibilities.map((resp, idx) => (
                   <li key={idx}>
                     <CustomizeTypography sx={{ fontSize: "16px" }}>
-                      {resp}
+                      {/* {t(`header.${header.title}`)} */}
+                      {t(`experience.${resp.textKey}`)}
                     </CustomizeTypography>
                   </li>
-                ))}
+              ))}
               </ul>
             </Box>
           ))}
@@ -52,20 +55,35 @@ function Experience() {
 
 export default Experience;
 
+// const listExperienceText = [
+//   {
+//     position: "position",
+
+//     responsibilities: [
+//       "Developed the website application based on the feedback from the design.",
+//       "Met and worked with the design team.",
+//       "Got feedback from the design team after completing the tasks.",
+//       "Learned, researched, and applied animations to the project.",
+//     ],
+//   },
+// ];
+
 const listExperienceText = [
   {
-    position: "Work with position Front-end Developer part-time.",
-
+    position: "position",
     responsibilities: [
-      "Developed the website application based on the feedback from the design.",
-      "Met and worked with the design team.",
-      "Got feedback from the design team after completing the tasks.",
-      "Learned, researched, and applied animations to the project.",
+      {
+        textKey: "responsibility1",
+      },
+      {
+        textKey: "responsibility2",
+      },
+      {
+        textKey: "responsibility3",
+      },
+      {
+        textKey: "responsibility4",
+      },
     ],
   },
 ];
-
-// "Work with position Front-end Developer part-time.",
-//   "Met and worked with the design team.",
-//   "Got feedback from the design team after completing the tasks.",
-//   "Learned, researched, and applied animations to the project.",

@@ -187,12 +187,25 @@ function Header() {
               }}
               onClick={() => handleChangeLanguage("en")}
             >
-              <Box
-                sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
-                src={UKFlag}
-                alt="React Image"
-                component={"img"}
-              />
+              <Tooltip
+                title={
+                  <Typography
+                    sx={{
+                      fontSize: "13px",
+                      mb: 0,
+                    }}
+                  >
+                    Translate to Vietnamese
+                  </Typography>
+                }
+              >
+                <Box
+                  sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
+                  src={UKFlag}
+                  alt="React Image"
+                  component={"img"}
+                />
+              </Tooltip>
             </Box>
           ) : (
             // vietnamese
@@ -210,12 +223,25 @@ function Header() {
               }}
               onClick={() => handleChangeLanguage("vi")}
             >
-              <Box
-                sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
-                src={VNFlag}
-                alt="React Image"
-                component={"img"}
-              />
+              <Tooltip
+                title={
+                  <Typography
+                    sx={{
+                      fontSize: "13px",
+                      mb: 0,
+                    }}
+                  >
+                    Dịch sang tiếng Anh
+                  </Typography>
+                }
+              >
+                <Box
+                  sx={{ height: "36px", width: "36px", borderRadius: "50%" }}
+                  src={VNFlag}
+                  alt="React Image"
+                  component={"img"}
+                />
+              </Tooltip>
             </Box>
           )}
           <a
@@ -231,7 +257,8 @@ function Header() {
                     mb: 0,
                   }}
                 >
-                  My Repository
+                  {/* My Repository */}
+                  {t("github")}
                 </Typography>
               }
             >

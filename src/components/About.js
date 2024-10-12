@@ -16,7 +16,7 @@ import Experience from "./Experience/Experience";
 import { useTranslation } from "react-i18next";
 
 function About() {
-  const { t } = useTranslation("about");
+  const { t } = useTranslation(["about"]);
   return (
     <Box
       sx={{
@@ -55,7 +55,7 @@ function About() {
       <Experience />
 
       <Box sx={{ mt: 2 }}>
-        <AboutTitle title={"Skills"} />
+        <AboutTitle title={t("skills")} />
         {/* 
         grid  */}
         <Grid2 container spacing={4}>
