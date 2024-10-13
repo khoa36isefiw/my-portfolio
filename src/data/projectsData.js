@@ -1,5 +1,6 @@
 import LevelUpLogo from "../assets/images/LevelUpLogo.png";
 import GimmeShoes from "../assets/images/shoes.webp";
+import Portfolio from "../assets/images/portfolio-projects.png";
 
 export const projectsData = [
   {
@@ -112,6 +113,24 @@ export const projectsData = [
       "Researching and using animations.",
     ],
     technologies: ["Typescript", "React Native."],
+  },
+  {
+    projectId: 6,
+    projectType: "website",
+    projectName: "Portfolio",
+    projectImage: Portfolio,
+    desc: "projectDes6",
+    //  "Developing a simple travel application UI in React Native with expo router for navigating between different screens of the app.",
+    timeStart: "Sep, 2024",
+    timeEnd: "Sep, 2024",
+    linkDeployed: "https://khoa-portfolio-kappa.vercel.app/en",
+    nameLinkDeployed: "my-portfolio",
+    linkSourceCode: "https://github.com/khoa36isefiw/my-portfolio",
+    responsibilities: [
+      "Implementing some User Interfaces: Travel App Home Screen, World popular places list, Travel Groups and Popular places details.",
+      "Researching and using animations.",
+    ],
+    technologies: ["Javascript", "ReactJS", "Material-UI."],
   },
 ];
 
